@@ -1,0 +1,112 @@
+/* ==========================================================
+   Portafolio: María del Roble Luna
+   Se carga DESPUÉS de Bootstrap para sobrescribir sus variables.
+   ========================================================== */
+
+/* 1. Paleta y tipografía */
+:root {
+  --lava: #780000;
+  --papaya: #FDF0D5;
+  --apricot: #FFE5B4;
+  --teal: #005F73;
+  --space: #003049;
+
+  --font-title: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
+  --font-code: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Variables de Bootstrap */
+  --bs-body-bg: var(--papaya);
+  --bs-body-color: var(--space);
+  --bs-body-font-family: var(--font-body);
+  --bs-body-font-size: 1.0625rem;
+  --bs-body-line-height: 1.6;
+  --bs-link-color: var(--lava);
+  --bs-link-hover-color: var(--space);
+  --bs-link-color-rgb: 120, 0, 0;
+  --bs-link-hover-color-rgb: 0, 48, 73;
+  --bs-border-radius: 0.75rem;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+h1, h2, h3, h4, h5, h6, .navbar-brand { font-family: var(--font-title); }
+
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 2000; background: var(--space); color: var(--papaya); padding: 8px 16px; border-radius: 8px; }
+
+/* 2. Navegación */
+.site-nav { background: var(--space); transition: box-shadow .2s ease; }
+.site-nav.is-scrolled { box-shadow: 0 2px 0 var(--apricot); }
+.site-nav .navbar-brand { font-weight: 700; font-size: 1.35rem; color: var(--papaya); }
+.site-nav .nav-link { color: var(--apricot); font-weight: 600; }
+.site-nav .nav-link:hover { color: var(--lava); }
+.site-nav .nav-link.active { color: var(--lava); text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+
+/* 3. Botones */
+.btn { font-weight: 600; border-radius: 0.5rem; }
+.btn-lava { --bs-btn-color: var(--papaya); --bs-btn-bg: var(--lava); --bs-btn-border-color: var(--lava);
+  --bs-btn-hover-color: var(--papaya); --bs-btn-hover-bg: var(--space); --bs-btn-hover-border-color: var(--space);
+  --bs-btn-active-color: var(--papaya); --bs-btn-active-bg: var(--space); --bs-btn-active-border-color: var(--space); }
+.btn-outline-space { --bs-btn-color: var(--space); --bs-btn-border-color: var(--space); --bs-btn-border-width: 2px;
+  --bs-btn-hover-color: var(--papaya); --bs-btn-hover-bg: var(--space); --bs-btn-hover-border-color: var(--space);
+  --bs-btn-active-color: var(--papaya); --bs-btn-active-bg: var(--space); --bs-btn-active-border-color: var(--space); }
+.btn-outline-apricot { --bs-btn-color: var(--apricot); --bs-btn-border-color: var(--apricot); --bs-btn-border-width: 2px;
+  --bs-btn-hover-color: var(--space); --bs-btn-hover-bg: var(--apricot); --bs-btn-hover-border-color: var(--apricot);
+  --bs-btn-active-color: var(--space); --bs-btn-active-bg: var(--apricot); --bs-btn-active-border-color: var(--apricot); }
+
+/* 4. Presentación */
+.hero { padding: 9rem 0 5rem; }
+.eyebrow { font-family: var(--font-code); font-size: .9rem; color: var(--teal); margin-bottom: 1.25rem; }
+.display-title { font-family: var(--font-title); font-weight: 700; font-size: clamp(2.25rem, 6vw, 3.75rem); line-height: 1.08; margin-bottom: 1.5rem; }
+.hero .lead { font-size: 1.2rem; max-width: 40rem; }
+
+.code-card { background: var(--space); color: var(--papaya); border-radius: var(--bs-border-radius); padding: 1.75rem;
+  font-family: var(--font-code); font-size: .9rem; line-height: 1.9; display: flex; flex-direction: column; overflow-x: auto; }
+.code-card .code-accent { color: var(--apricot); }
+.code-card .code-line { padding-left: 1.5rem; white-space: nowrap; }
+
+/* 5. Secciones */
+.section { padding: 4.5rem 0; }
+.section-title { font-weight: 700; font-size: clamp(1.75rem, 4vw, 2.25rem); margin-bottom: 2rem; }
+
+/* 6. Etiquetas (badges) */
+.tag { font-family: var(--font-code); font-weight: 500; font-size: .8rem; background: var(--apricot); color: var(--space);
+  padding: .45rem .8rem; border-radius: 999px; }
+.tag-teal { background: var(--teal); color: var(--papaya); }
+
+/* 7. Proyectos */
+.project-card { background: var(--apricot); color: var(--space); border: 0; }
+.project-card .card-body { padding: 1.75rem; }
+.project-card .card-title { font-weight: 700; }
+.project-stack { font-family: var(--font-code); font-size: .8rem; color: var(--lava); }
+.project-card-teal { background: var(--teal); color: var(--papaya); }
+.project-card-teal .project-stack, .project-card-teal .card-link { color: var(--apricot); }
+.card-link { font-weight: 600; color: var(--lava); }
+
+/* 8. Experiencia */
+.job { border-top: 2px solid var(--space); padding: 1.5rem 0; }
+.job-date { font-family: var(--font-code); font-size: .8rem; color: var(--teal); margin-bottom: .5rem; }
+.job ul { margin: 0; padding-left: 1.25rem; }
+.job li + li { margin-top: .4rem; }
+
+/* 9. Formación */
+.info-card { background: var(--apricot); color: var(--space); border: 0; }
+.info-card .card-body { padding: 1.5rem; }
+.text-muted-space { color: var(--teal); font-size: .95rem; }
+
+/* 10. Contacto / pie */
+.site-footer { background: var(--space); color: var(--papaya); padding: 4.5rem 0 2.5rem; }
+.footer-title { font-weight: 700; font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; }
+.footer-text { max-width: 36rem; margin-bottom: 1.5rem; }
+.footer-meta { font-family: var(--font-code); font-size: .8rem; color: var(--apricot); }
+.site-footer :focus-visible { outline-color: var(--apricot); }
+.site-footer .btn-lava:hover { background: var(--papaya); color: var(--space); border-color: var(--papaya); }
+
+/* 11. Menú móvil */
+@media (max-width: 991.98px) {
+  .site-nav .navbar-collapse { padding: 1rem 0; }
+  .hero { padding-top: 7rem; }
+}
